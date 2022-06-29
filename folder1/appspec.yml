@@ -1,0 +1,49 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /home/hadoop/onetimeexecution
+permissions:
+  - object: /home/hadoop
+    pattern: "onetimeexecution"
+    owner: hadoop
+    group: hadoop
+    mode: 775
+    type:
+      - directory
+#  - object: /home/hadoop/onetimeexecution
+#    pattern: "appspec.yml"
+#    owner: hadoop
+#    group: hadoop
+#    mode: 664
+#    type:
+#      - file
+#  - object: /home/hadoop/onetimeexecution
+#    pattern: "test"
+#    owner: hadoop
+#    group: hadoop
+#    mode: 664
+#    type:
+#      - file
+  - object: /home/hadoop/onetimeexecution
+    owner: hadoop
+    group: hadoop
+    mode: 775
+#  - object: /home/hadoop/onetimeexecution/config
+#    owner: hadoop
+#    group: hadoop
+#    mode: 664
+#    type:
+#      - file
+phases:
+build:
+commands:
+  - echo "this is build phase ...zipping my webpages"
+  
+  post_build:
+  commands:
+  - echo "deployed to s3"
+  
+  artifacts:
+  files:
+  - ' */*'
