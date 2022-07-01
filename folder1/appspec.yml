@@ -1,16 +1,20 @@
 version: 0.0
 os: linux
 files:
-  - source: /
-    destination: /home/hadoop/onetimeexecution
-permissions:
-  - object: /home/hadoop
-    pattern: "onetimeexecution"
-    owner: hadoop
-    group: hadoop
-    mode: 775
-    type:
-      - directory
+  - source: Batch_Main.py
+    destination: C:\Anu\pipelinecreation
+    - source: hdp-lambda-add-timestamp-realtime.py
+    destination: C:\Anu\pipelinecreation
+#permissions:
+  #- object: /home/hadoop
+    #pattern: "onetimeexecution"
+   # owner: hadoop
+    #group: hadoop
+    #mode: 775
+    #type:
+     # - directory
+      
+      
 #  - object: /home/hadoop/onetimeexecution
 #    pattern: "appspec.yml"
 #    owner: hadoop
@@ -25,25 +29,13 @@ permissions:
 #    mode: 664
 #    type:
 #      - file
-  - object: /home/hadoop/onetimeexecution
-    owner: hadoop
-    group: hadoop
-    mode: 775
+ # - object: /home/hadoop/onetimeexecution
+  #  owner: hadoop
+  #  group: hadoop
+  #  mode: 775
 #  - object: /home/hadoop/onetimeexecution/config
 #    owner: hadoop
 #    group: hadoop
 #    mode: 664
 #    type:
 #      - file
-phases:
-build:
-commands:
-  - echo "this is build phase ...zipping my webpages"
-  
-  post_build:
-  commands:
-  - echo "deployed to s3"
-  
-  artifacts:
-  files:
-  - ' */*'
