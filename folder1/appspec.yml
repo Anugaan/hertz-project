@@ -1,8 +1,8 @@
 version: 0.0
 os: linux
 files:
-  - source: hdp-lambda-add-timestamp-realtime.py
-    destination: C:\Anu\pipelinecreation
+  - source: index.html
+    destination: /var/www/html/
     
 #permissions:
   #- object: /home/hadoop
