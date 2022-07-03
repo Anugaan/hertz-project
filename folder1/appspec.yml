@@ -1,16 +1,17 @@
 version: 0.0
 os: linux
 files:
-  - source: /
-    destination: /home/hadoop/onetimeexecution
-permissions:
-  - object: /home/hadoop
-    pattern: "onetimeexecution"
-    owner: hadoop
-    group: hadoop
-    mode: 775
-    type:
-      - directory
+  - source: hdp-lambda-add-timestamp-realtime.py
+    destination: C:\Anu\pipelinecreation
+    
+#permissions:
+  #- object: /home/hadoop
+    #pattern: "onetimeexecution"
+   # owner: hadoop
+   # group: hadoop
+   # mode: 775
+    #type:
+     # - directory
 #  - object: /home/hadoop/onetimeexecution
 #    pattern: "appspec.yml"
 #    owner: hadoop
@@ -25,13 +26,14 @@ permissions:
 #    mode: 664
 #    type:
 #      - file
-  - object: /home/hadoop/onetimeexecution
-    owner: hadoop
-    group: hadoop
-    mode: 775
+ # - object: /home/hadoop/onetimeexecution
+  #  owner: hadoop
+  #  group: hadoop
+  #  mode: 775
 #  - object: /home/hadoop/onetimeexecution/config
 #    owner: hadoop
 #    group: hadoop
 #    mode: 664
 #    type:
 #      - file
+
